@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# No reescribir si el archivo o carpeta existe (para /uploads, assets, etc.)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirigir todo lo demás al front controller
+RewriteRule ^ index.php [QSA,L]
